@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/functions/about_me.dart';
+import 'package:portfolio/functions/education.dart';
+import 'package:portfolio/functions/experience.dart';
+import 'package:portfolio/functions/skills.dart';
 
 class ResumeScreen extends StatefulWidget {
   const ResumeScreen({super.key});
@@ -146,13 +150,13 @@ class _ResumeScreenState extends State<ResumeScreen> {
   Widget _getContentForSection(String section) {
     switch (section) {
       case 'Experience':
-        return Text('Content for Experience section');
+        return Experience();
       case 'Education':
-        return Text('Content for Education section');
+        return Education();
       case 'Skills':
-        return Text('Content for Skills section');
+        return Skills();
       case 'About me':
-        return Text('Content for About me section');
+        return AboutMe();
       default:
         return Container();
     }
