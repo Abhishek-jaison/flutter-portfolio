@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:portfolio/components/counter.dart';
 import 'package:portfolio/functions/nav_item.dart';
+import 'package:portfolio/widgets/services_screen.dart';
 import '../widgets/home_screen.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -11,7 +13,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int _selectedIndex = 0;
+  int _selectedIndex = 1;
 
   void _onTabTapped(int index) {
     setState(() {
@@ -24,22 +26,20 @@ class _HomeScreenState extends State<HomeScreen> {
       case 0:
         return HomeScreenContent();
       case 1:
-        return HomeScreenContent();
+        return ServicesScreen();
       case 2:
         return HomeScreenContent();
-       case 3:
+      case 3:
         return HomeScreenContent();
-       case 4:
+      case 4:
         return HomeScreenContent();
-       case 5:
+      case 5:
         return HomeScreenContent();
-        
+
       default:
         return HomeScreenContent();
     }
   }
-
-  
 
   @override
   Widget build(BuildContext context) {
@@ -99,7 +99,7 @@ class _HomeScreenState extends State<HomeScreen> {
             constraints:
                 BoxConstraints(maxWidth: 800), // Set the desired width here
             child: AnimatedSwitcher(
-              duration: Duration(milliseconds: 300),
+              duration: Duration(milliseconds: 200),
               child: _getSelectedWidget(),
               transitionBuilder: (Widget child, Animation<double> animation) {
                 return FadeTransition(opacity: animation, child: child);
