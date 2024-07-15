@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:portfolio/components/counter.dart';
 import 'package:portfolio/functions/nav_item.dart';
+import 'package:portfolio/widgets/resume_screen.dart';
 import 'package:portfolio/widgets/services_screen.dart';
 import '../widgets/home_screen.dart';
 
@@ -13,7 +14,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int _selectedIndex = 1;
+  int _selectedIndex = 3;
 
   void _onTabTapped(int index) {
     setState(() {
@@ -30,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
       case 2:
         return HomeScreenContent();
       case 3:
-        return HomeScreenContent();
+        return ResumeScreen();
       case 4:
         return HomeScreenContent();
       case 5:
@@ -45,7 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(60.0),
+          preferredSize: Size.fromHeight(44.0),
           child: AppBar(
             backgroundColor: Colors.transparent,
             elevation: 0, // Remove the shadow

@@ -80,7 +80,7 @@ class _HoverContainerState extends State<HoverContainer> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 75,
+              height: 50,
             ),
             Text(
               widget.titleNumber,
