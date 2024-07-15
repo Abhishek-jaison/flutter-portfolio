@@ -22,7 +22,7 @@ class Counter extends StatelessWidget {
       builder: (context, value, child) {
         return Text(
           '$value',
-          style: TextStyle(fontSize: 48, fontWeight: FontWeight.bold,color: Color.fromARGB(255, 2, 216, 138)),
+          style: TextStyle(fontSize: 48, fontWeight: FontWeight.bold,color: Colors.white),
         );
       },
     );

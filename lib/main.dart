@@ -12,7 +12,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Animated Numbers',
       theme: ThemeData(
-        primarySwatch: Colors.amber,
+        textTheme: TextTheme(
+          bodyLarge: TextStyle(color: Colors.white), // Change to your desired color
+          bodyMedium: TextStyle(color: Colors.white), // Change to your desired color
+        ),
+        
         scaffoldBackgroundColor: Colors.black,
       ),
       home: HomeScreen(),
