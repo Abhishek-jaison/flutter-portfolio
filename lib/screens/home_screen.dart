@@ -4,6 +4,7 @@ import 'package:portfolio/components/counter.dart';
 import 'package:portfolio/functions/nav_item.dart';
 import 'package:portfolio/widgets/resume_screen.dart';
 import 'package:portfolio/widgets/services_screen.dart';
+import 'package:portfolio/widgets/work_screen.dart';
 import '../widgets/home_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -29,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
       case 1:
         return ServicesScreen();
       case 2:
-        return HomeScreenContent();
+        return ImageScrollScreen();
       case 3:
         return ResumeScreen();
       case 4:
