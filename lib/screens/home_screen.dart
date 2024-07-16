@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:lottie/lottie.dart';
 import 'package:portfolio/components/counter.dart';
 import 'package:portfolio/functions/nav_item.dart';
+import 'package:portfolio/widgets/contact_screen.dart';
 import 'package:portfolio/widgets/resume_screen.dart';
 import 'package:portfolio/widgets/services_screen.dart';
 import 'package:portfolio/widgets/work_screen.dart';
@@ -15,7 +17,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int _selectedIndex = 3;
+  int _selectedIndex = 4;
 
   void _onTabTapped(int index) {
     setState(() {
@@ -30,13 +32,12 @@ class _HomeScreenState extends State<HomeScreen> {
       case 1:
         return ServicesScreen();
       case 2:
-        return ImageScrollScreen();
+        return WorkScreen();
       case 3:
         return ResumeScreen();
       case 4:
-        return HomeScreenContent();
-      case 5:
-        return HomeScreenContent();
+        return UserForm();
+
 
       default:
         return HomeScreenContent();
@@ -85,10 +86,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               title: 'Contact',
                               onTap: () => _onTabTapped(4),
                               isSelected: _selectedIndex == 4),
-                          NavItem(
-                              title: 'Hire Me',
-                              onTap: () => _onTabTapped(5),
-                              isSelected: _selectedIndex == 5),
+                         
+                          ElevatedButton(onPressed: () => _onTabTapped(4), child: Text('Hire Me'))
                         ],
                       ),
                     ]),
