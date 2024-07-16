@@ -122,7 +122,7 @@ class _HomeScreenContentState extends State<HomeScreenContent> {
                   children: [
                     Counter(
                         targetNumber: 6,
-                        animationDuration: Duration(seconds: 3)),
+                        animationDuration: Duration(seconds: 2)),
                     Text(' Projects \n completed'),
                   ],
                 ),
@@ -138,7 +138,7 @@ class _HomeScreenContentState extends State<HomeScreenContent> {
                   children: [
                     Counter(
                         targetNumber: 120,
-                        animationDuration: Duration(seconds: 6)),
+                        animationDuration: Duration(seconds: 4)),
                     Text(' Hour\'s \n spent'),
                   ],
                 )

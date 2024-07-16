@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Animated Numbers',
+      title: 'Portfolio',
       theme: ThemeData(
         textTheme: TextTheme(
           bodyLarge: TextStyle(color: Colors.white), // Change to your desired color
