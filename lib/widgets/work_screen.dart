@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:universal_html/html.dart' as html;
 
 class WorkScreen extends StatefulWidget {
   @override
@@ -6,6 +7,15 @@ class WorkScreen extends StatefulWidget {
 }
 
 class _WorkScreennState extends State<WorkScreen> {
+
+ void downloadResume() {
+    final url = 'https://drive.google.com/file/d/1rfYrSTsMrfYfLhAhYPIuUUu1dPif74hV/view?usp=drive_link'; // Replace with the actual URL of your resume
+    final anchor = html.AnchorElement(href: url)
+      ..setAttribute('download', 'Abhishek_jaison_resume.pdf') // Replace with the desired file name
+      ..setAttribute('target', '_blank') // Open in a new tab
+      ..click();
+  }
+
   int _selectedIndex = 0;
   late PageController _pageController;
 
@@ -64,7 +74,7 @@ class _WorkScreennState extends State<WorkScreen> {
                   borderRadius: BorderRadius.circular(50),
                 ),
                 child: IconButton(
-                    onPressed: () {},
+                    onPressed: (){},
                     icon: Image.asset(
                       'images/github.png',
                       color: Colors.white,
