@@ -232,7 +232,7 @@ class _HomeScreenContentState extends State<HomeScreenContent> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Lottie.asset('images/man.json',
-                        height: screenWidth -100, width: screenWidth - 100),
+                        height: screenWidth -200, width: screenWidth - 100),
                   ],
                 ),
                 Row(mainAxisAlignment: MainAxisAlignment.center,

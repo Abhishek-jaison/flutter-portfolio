@@ -23,7 +23,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
       Color mycolor = Color.fromARGB(255, 2, 216, 138);
 
-  int _selectedIndex = 4;
+  int _selectedIndex = 0;
   late double screenWidth;
   void _onTabTapped(int index) {
     setState(() {
@@ -147,10 +147,13 @@ class _HomeScreenState extends State<HomeScreen> {
           actions: [
             CustomElevatedButton(
               text: 'Hire me',
-              onPressed: () {},
+              onPressed: () => _onTabTapped(4),
             )
           ],
-        ),
+        iconTheme: IconThemeData(
+          color: mycolor, // Change the color to your desired color
+        ),),
+        
         drawer: Drawer(
           child: ListView(
             padding: EdgeInsets.zero,

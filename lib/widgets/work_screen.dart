@@ -368,7 +368,7 @@ class _WorkScreennState extends State<WorkScreen> {
               height: 15,
             ),
             Text(
-              'An application which can be used to post our own \ncontents to all the users loged into the app',
+              'An application which can be used to post our own contents to all the users loged into the app',
               style: TextStyle(fontWeight: FontWeight.w200, color: Colors.grey),
             ),
             SizedBox(
