@@ -23,7 +23,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
       Color mycolor = Color.fromARGB(255, 2, 216, 138);
 
-  int _selectedIndex = 3;
+  int _selectedIndex = 4;
   late double screenWidth;
   void _onTabTapped(int index) {
     setState(() {
