@@ -7,11 +7,12 @@ class WorkScreen extends StatefulWidget {
 }
 
 class _WorkScreennState extends State<WorkScreen> {
+  
 
- void downloadResume() {
-    final url = 'https://drive.google.com/file/d/1rfYrSTsMrfYfLhAhYPIuUUu1dPif74hV/view?usp=drive_link'; // Replace with the actual URL of your resume
+  void _git() {
+    final url = _githublinks[_selectedIndex]; // Use the link based on selected index
     final anchor = html.AnchorElement(href: url)
-      ..setAttribute('download', 'Abhishek_jaison_resume.pdf') // Replace with the desired file name
+      ..setAttribute('download', 'resume_${_selectedIndex + 1}.pdf') // Set desired file name
       ..setAttribute('target', '_blank') // Open in a new tab
       ..click();
   }
@@ -25,7 +26,11 @@ class _WorkScreennState extends State<WorkScreen> {
     'images/weather_app.png',
     // Add all your image paths here
   ];
-
+  final List<String> _githublinks = [
+    'https://github.com/Abhishek-jaison/login-page-with-firebase',
+    'https://github.com/Abhishek-jaison/chatbot',
+    'https://github.com/Abhishek-jaison/weather-app-v2',
+  ];
   final List<Widget> _descriptions = [
     Container(
         width: 400,
@@ -33,7 +38,7 @@ class _WorkScreennState extends State<WorkScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 45,
+              height: 50,
             ),
             Text(
               '01',
@@ -68,19 +73,7 @@ class _WorkScreennState extends State<WorkScreen> {
               color: Colors.grey,
               thickness: .5,
             ),
-            Container(
-                decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 28, 28, 28),
-                  borderRadius: BorderRadius.circular(50),
-                ),
-                child: IconButton(
-                    onPressed: (){},
-                    icon: Image.asset(
-                      'images/github.png',
-                      color: Colors.white,
-                      height: 30,
-                      width: 30,
-                    ))),
+          
           ],
         )),
     Container(
@@ -89,7 +82,7 @@ class _WorkScreennState extends State<WorkScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 45,
+              height: 50,
             ),
             Text(
               '02',
@@ -124,19 +117,7 @@ class _WorkScreennState extends State<WorkScreen> {
               color: Colors.grey,
               thickness: .5,
             ),
-            Container(
-                decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 28, 28, 28),
-                  borderRadius: BorderRadius.circular(50),
-                ),
-                child: IconButton(
-                    onPressed: () {},
-                    icon: Image.asset(
-                      'images/github.png',
-                      color: Colors.white,
-                      height: 30,
-                      width: 30,
-                    )))
+          
           ],
         )),
     Container(
@@ -145,7 +126,7 @@ class _WorkScreennState extends State<WorkScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 45,
+              height: 50,
             ),
             Text(
               '03',
@@ -180,19 +161,7 @@ class _WorkScreennState extends State<WorkScreen> {
               color: Colors.grey,
               thickness: .5,
             ),
-            Container(
-                decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 28, 28, 28),
-                  borderRadius: BorderRadius.circular(50),
-                ),
-                child: IconButton(
-                    onPressed: () {},
-                    icon: Image.asset(
-                      'images/github.png',
-                      color: Colors.white,
-                      height: 30,
-                      width: 30,
-                    )))
+          
           ],
         )),
 
@@ -247,82 +216,268 @@ class _WorkScreennState extends State<WorkScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 800,
-      child: Column(
-        children: [
-          SizedBox(
-            height: 100,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  _descriptions[_selectedIndex],
-                  SizedBox(
-                    height: 20,
+    double swidth =MediaQuery.of(context).size.width;
+    
+    if(swidth >= 800){
+      return
+    SingleChildScrollView(
+      child: Container(
+        width: 800,
+        child: Column(
+          children: [
+            SizedBox(
+              height: 100,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    _descriptions[_selectedIndex],
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Container(
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 28, 28, 28),
+                    borderRadius: BorderRadius.circular(50),
                   ),
-                  Row(
-                    children: [
-                      Container(
-                        width: 35,
-                        height: 35,
-                        decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 2, 216, 138),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: IconButton(
-                          icon: Icon(
-                            Icons.arrow_back,
-                            size: 20,
+                  child: IconButton(
+                      onPressed: _git,
+                      icon: Image.asset(
+                        'images/github.png',
+                        color: Colors.white,
+                        height: 30,
+                        width: 30,
+                      ))),
+                    SizedBox(height: 15,),
+                    Row(
+                      children: [
+                        Container(
+                          width: 35,
+                          height: 35,
+                          decoration: BoxDecoration(
+                            color: Color.fromARGB(255, 2, 216, 138),
+                            borderRadius: BorderRadius.circular(10),
                           ),
-                          onPressed: _previousPage,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Container(
-                        width: 35,
-                        height: 35,
-                        decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 2, 216, 138),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: IconButton(
-                          icon: Icon(
-                            Icons.arrow_forward,
-                            size: 20,
+                          child: IconButton(
+                            icon: Icon(
+                              Icons.arrow_back,
+                              size: 20,
+                            ),
+                            onPressed: _previousPage,
                           ),
-                          onPressed: _nextPage,
                         ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              Container(
-                height: 500,
-                width: 400,
-                child: PageView.builder(
-                  controller: _pageController,
-                  itemCount: _imagePaths.length,
-                  onPageChanged: _onPageChanged,
-                  itemBuilder: (context, index) {
-                    return Image.asset(
-                      _imagePaths[index],
-                      fit: BoxFit.contain,
-                    );
-                  },
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Container(
+                          width: 35,
+                          height: 35,
+                          decoration: BoxDecoration(
+                            color: Color.fromARGB(255, 2, 216, 138),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: IconButton(
+                            icon: Icon(
+                              Icons.arrow_forward,
+                              size: 20,
+                            ),
+                            onPressed: _nextPage,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
-              ),
-              SizedBox(height: 20.0),
-            ],
-          ),
-        ],
+                Container(
+                  height: 500,
+                  width: 400,
+                  child: PageView.builder(
+                    controller: _pageController,
+                    itemCount: _imagePaths.length,
+                    onPageChanged: _onPageChanged,
+                    itemBuilder: (context, index) {
+                      return Image.asset(
+                        _imagePaths[index],
+                        fit: BoxFit.contain,
+                      );
+                    },
+                  ),
+                ),
+                SizedBox(height: 20.0),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
+  else{
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            _descriptions2[_selectedIndex],
+            Container(
+                  width: swidth -30,
+                  height: swidth,
+                  
+                  child: PageView.builder(
+                    controller: _pageController,
+                    itemCount: _imagePaths.length,
+                    onPageChanged: _onPageChanged,
+                    itemBuilder: (context, index) {
+                      return Image.asset(
+                        _imagePaths[index],
+                        fit: BoxFit.contain,
+                      );
+                    },
+                  ),
+                ),
+
+          ],
+        ),
+      ),
+    );
+
+  }
+  }
+
+ final List<Widget> _descriptions2 = [
+    Container(
+        
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            
+            Text(
+              '01',
+              style: TextStyle(fontSize: 55, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+              height: 0,
+            ),
+            Text(
+              'Social Media App',
+              style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            Text(
+              'An application which can be used to post our own \ncontents to all the users loged into the app',
+              style: TextStyle(fontWeight: FontWeight.w200, color: Colors.grey),
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            Text(
+              'Flutter, Firebase, dart',
+              style: TextStyle(
+                  fontSize: 14, color: Color.fromARGB(255, 2, 216, 138)),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Divider(
+              color: Colors.grey,
+              thickness: .5,
+            ),
+          
+          ],
+        )),
+         Container(
+        
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            
+            Text(
+              '02',
+              style: TextStyle(fontSize: 55, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+              height: 0,
+            ),
+            Text(
+              'Chat bot',
+              style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            Text(
+              'An application which takes the imput prompt and returns the response form gemini in the application',
+              style: TextStyle(fontWeight: FontWeight.w200, color: Colors.grey),
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            Text(
+              'Flutter, Gemini api, dart',
+              style: TextStyle(
+                  fontSize: 14, color: Color.fromARGB(255, 2, 216, 138)),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Divider(
+              color: Colors.grey,
+              thickness: .5,
+            ),
+          
+          ],
+        )),
+         Container(
+        
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            
+            Text(
+              '03',
+              style: TextStyle(fontSize: 55, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+              height: 0,
+            ),
+            Text(
+              'Weather App',
+              style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            Text(
+              'An application that displays the weather of that current city,and the forecast for the next 24 Hour\'s',
+              style: TextStyle(fontWeight: FontWeight.w200, color: Colors.grey),
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            Text(
+              'Flutter, OpenWeatherAPI, dart',
+              style: TextStyle(
+                  fontSize: 14, color: Color.fromARGB(255, 2, 216, 138)),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Divider(
+              color: Colors.grey,
+              thickness: .5,
+            ),
+          
+          ],
+        )),
+    
+
+
+    // Add all your descriptions here
+  ];     
+
+
 }
