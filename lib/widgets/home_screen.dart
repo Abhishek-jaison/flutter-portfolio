@@ -1,9 +1,9 @@
 
 
-
+import 'package:lottie_tgs/lottie.dart';
+import 'package:dotlottie_loader/dotlottie_loader.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:portfolio/buttons/icon_button.dart';
 import 'package:portfolio/components/counter.dart';
@@ -102,8 +102,11 @@ class _HomeScreenContentState extends State<HomeScreenContent> {
                       )
                     ],
                   ),
-                  Lottie.asset('images/man.json', height: 300, width: 300),
-                ],
+                  Container(
+                    height: 350,
+                    width: 350,
+                    child: Lottie.asset('images/man.json')
+              )],
               ),
               Row(
                 children: [
@@ -231,11 +234,10 @@ class _HomeScreenContentState extends State<HomeScreenContent> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Lottie.asset('images/man.json',
-                        height: screenWidth -200, width: screenWidth - 100),
-                  ],
+                    SizedBox(height: 10,)
+                  ]
                 ),
-                Row(mainAxisAlignment: MainAxisAlignment.center,
+                Row(mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     ElevatedButton(
                       onPressed: downloadResume,
@@ -269,6 +271,7 @@ class _HomeScreenContentState extends State<HomeScreenContent> {
                         onPressed: instagramlink),
                   ],
                 ),
+                SizedBox(height: 30,),
                 Row(
                   children: [
                     Expanded(
@@ -293,6 +296,7 @@ class _HomeScreenContentState extends State<HomeScreenContent> {
                     ),
                   ],
                 ),
+                SizedBox(height: 20,),
                 Row(
                   children: [
                     Expanded(

@@ -45,6 +45,10 @@ dependencies:
   dio: ^5.1.2
   path_provider: ^2.0.13
   universal_html: ^2.0.6
+  lottie_tgs: ^2.7.1
+  dotlottie_loader: ^0.0.4
+  lottie_player: ^0.0.5
+  video_player: ^2.9.1
 
 dev_dependencies:
   flutter_test:
